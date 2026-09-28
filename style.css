@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background-color: #C43D3D;
+    font-family: 'Press Start 2P';
+    border-bottom: 5px black solid;
+}
+
+.header-content p {
+    color: white;
+    font-size: 50px;
+
+}
+
+.header-content img {
+    width: 100px;
+}
+
+.header-content input {
+    width: 250px;
+    height: 40px;
+    font-size: 12px;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-family: 'Press Start 2P';
+    text-align: center;
+    outline: none;
+}
+
+.header-content input:focus::placeholder {
+    color: transparent;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    background-color: #C43D3D;
+    gap: 50px;
+    color: white;
+    height: 154.5px;
+    font-family: 'Press Start 2P';
+    border-top: 5px black solid;
+}
