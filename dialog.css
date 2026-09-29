@@ -1,0 +1,132 @@
+.pokemon-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 430px;
+    padding: 15px;
+
+    border: 8px solid #b8860b;
+    border-radius: 18px;
+
+    background-color: #d6a72c;
+
+    box-shadow:
+        0 0 0 4px black,
+        0 15px 40px rgba(0, 0, 0, 0.7);
+
+    font-family: 'Press Start 2P';
+}
+
+
+.dialog-content {
+    padding: 15px;
+    border: 4px solid black;
+    border-radius: 10px;
+    background-color: #f4e7bd;
+}
+
+
+.dialog-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+
+    border-bottom: 4px solid black;
+
+    font-size: 16px;
+}
+
+
+.dialog-image {
+    width: 100%;
+    height: 230px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 10px 0;
+
+    border: 5px solid black;
+
+    background:
+        radial-gradient(circle, #d9f0d0 0%, #8fbc8f 100%);
+
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.dialog-image img {
+    width: 220px;
+}
+
+
+.dialog-types {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    padding: 10px 0;
+    margin-bottom: 12px;
+
+    border-top: 4px solid black;
+    border-bottom: 4px solid black;
+}
+
+.dialog-types span {
+    padding: 7px 12px;
+
+    border: 3px solid black;
+    border-radius: 20px;
+
+    background-color: #7fc97f;
+
+    font-size: 9px;
+}
+
+
+.pokemon-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 12px;
+
+    border: 4px solid black;
+    border-radius: 6px;
+
+    background-color: #ead8a8;
+
+    font-size: 12px;
+}
+
+
+.dialog-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.dialog-buttons button {
+    width: 45px;
+    height: 45px;
+
+    border: 4px solid black;
+    border-radius: 50%;
+
+    background-color: #c43d3d;
+
+    cursor: pointer;
+    color: white;
+    font-family: 'Press Start 2P';
+}
+
+.pokemon-dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+}
