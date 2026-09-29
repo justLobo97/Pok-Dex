@@ -20,15 +20,20 @@ main {
     width: 100%;
 }
 
+header {
+    background-color: #C43D3D;
+    border-bottom: 5px black solid;
+}
+
 .header-content {
+    max-width: 1440px;
+    margin: 0 auto;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 16px;
-    background-color: #C43D3D;
     font-family: 'Press Start 2P';
-    border-bottom: 5px black solid;
 }
 
 .header-content p {
@@ -122,45 +127,22 @@ main {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+footer {
+    background-color: #C43D3D;
+    border-top: 5px black solid;
+}
 
 .footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background-color: #C43D3D;
+
     gap: 50px;
     color: white;
     height: 154.5px;
     font-family: 'Press Start 2P';
-    border-top: 5px black solid;
 }
