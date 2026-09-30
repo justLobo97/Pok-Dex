@@ -42,10 +42,11 @@ header {
     transform: translateX(-50%);
     color: white;
     font-size: 50px;
+    text-shadow: 4px 4px 0 black;
 }
 
 .header-content img {
-    width: 100px;
+    width: 110px;
 }
 
 .header-content input {
