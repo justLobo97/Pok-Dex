@@ -1,8 +1,8 @@
-
 let nextUrl;
 let isSearching = false;
 let hasLoadedMore = false;
 let newCards = "";
+
 
 async function getPokemon(newCard) {
 
@@ -18,10 +18,12 @@ async function getPokemon(newCard) {
 }
 
 async function nextPokemon() {
-
     let loadingScreen = document.getElementById('loading-screen');
 
     loadingScreen.classList.add('show');
+
+    document.querySelector('.load-more').disabled = true;
+    document.querySelector('.back-to-top').disabled = true;
 
     await new Promise(resolve => setTimeout(resolve, 2500));
 
@@ -35,14 +37,17 @@ async function nextPokemon() {
     document.getElementById('back-to-top').classList.add('show');
 
     loadingScreen.classList.remove('show');
+
+    document.querySelector('.load-more').disabled = false;
+    document.querySelector('.back-to-top').disabled = false;
 }
 
 async function loadPokemon(results, newCard) {
-
     for (let i = 0; i < results.length; i++) {
 
         let response = await fetch(results[i].url);
         let data = await response.json();
+
         renderPokemon(data, results[i].name, newCard);
     }
 }
@@ -92,14 +97,24 @@ async function searchPokemon() {
 }
 
 async function searchResults(pokemon, searchInput) {
-    
+    let foundPokemon = false;
+
     for (let i = 0; i < pokemon.results.length; i++) {
 
         if (pokemon.results[i].name.startsWith(searchInput)) {
+            foundPokemon = true;
+
             let response = await fetch(pokemon.results[i].url);
             let data = await response.json();
+
             renderPokemon(data, pokemon.results[i].name);
         }
+    }
+
+    if (!foundPokemon) {
+        document.getElementById('pokemon-card').innerHTML = `
+            <p class="no-pokemon">NO POKÉMON FOUND</p>
+        `;
     }
 }
 

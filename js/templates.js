@@ -47,7 +47,7 @@ function getDialogTemplate(pokemon) {
         </div>
 
         <div class="dialog-image">
-            <img src="${pokemon.sprites.front_default}">
+            <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
         </div>
 
          <div class="dialog-types">

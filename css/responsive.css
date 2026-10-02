@@ -169,3 +169,11 @@
         border-width: 2px;
     }
 }
+
+@media (max-width: 350px) {
+    .loading-screen {
+        left: 50% !important;
+        top: 30px !important;
+        transform: translateX(-50%);
+    }
+}
