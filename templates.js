@@ -24,7 +24,7 @@ function getDialogTemplate(pokemon) {
     let secondAbility;
 
     if (pokemon.types.length === 2) {
-        secondType = `<span>${pokemon.types[1].type.name.toUpperCase()}</span>`;
+        secondType = `<span class="${pokemon.types[1].type.name}">${pokemon.types[1].type.name.toUpperCase()}</span>`;
     }
     else {
         secondType = "";
@@ -51,7 +51,7 @@ function getDialogTemplate(pokemon) {
         </div>
 
          <div class="dialog-types">
-            <span>${pokemon.types[0].type.name.toUpperCase()}</span>
+            <span class="${pokemon.types[0].type.name}">${pokemon.types[0].type.name.toUpperCase()}</span>
             ${secondType}
         </div>
 

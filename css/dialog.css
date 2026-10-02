@@ -6,12 +6,9 @@
 
     width: 430px;
     padding: 15px;
-
-    border: 8px solid #b8860b;
     border-radius: 18px;
-
+    border: 8px solid #b8860b;
     background-color: #d6a72c;
-
     box-shadow:
         0 0 0 4px black,
         0 15px 40px rgba(0, 0, 0, 0.7);
@@ -51,11 +48,8 @@
     align-items: center;
 
     margin: 10px 0;
-
+    background: radial-gradient(circle, #f7edcf 0%, #d6c49a 100%);
     border: 5px solid black;
-
-    background:
-        radial-gradient(circle, #d9f0d0 0%, #8fbc8f 100%);
 
     box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
 }
@@ -104,12 +98,12 @@
     font-size: 12px;
 }
 
-.pokemon-info > p {
+.pokemon-info>p {
     display: flex;
     align-items: center;
 }
 
-.pokemon-info > p > span {
+.pokemon-info>p>span {
     width: 150px;
 }
 
@@ -149,7 +143,7 @@
     border-top: 2px dashed #8b7748;
 }
 
-.pokemon-abilities > p {
+.pokemon-abilities>p {
     font-size: 10px;
 }
 
@@ -172,6 +166,7 @@
 
     font-size: 9px;
 }
+
 .previous-button {
     padding-right: 8px;
 }

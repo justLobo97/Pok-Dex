@@ -4,10 +4,15 @@ let pokemonCount;
 
 async function openDialog(id) {
     currentPokemonId = id;
+
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     let pokemon = await response.json();
-    document.getElementById('pokemon-dialog').innerHTML = getDialogTemplate(pokemon);
-    dialog.showModal();
+
+    dialog.innerHTML = getDialogTemplate(pokemon);
+
+    if (!dialog.open) {
+        dialog.showModal();
+    }
 }
 
 dialog.addEventListener('click', function (event) {

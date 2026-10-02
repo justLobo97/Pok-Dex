@@ -8,7 +8,7 @@
 
 /* Kleineres Tablet / großes Handy */
 @media (max-width: 900px) {
-    
+
     .pokemon-grid {
         grid-template-columns: repeat(3, 200px);
     }
@@ -38,7 +38,7 @@
 
 /* Handy */
 @media (max-width: 668px) {
-    
+
     .pokemon-grid {
         grid-template-columns: repeat(2, 200px);
     }
@@ -73,7 +73,7 @@
 @media (max-width: 540px) {
 
     .pokemon-grid {
-        grid-template-columns: repeat(1,200px);
+        grid-template-columns: repeat(1, 200px);
     }
 
     .header-content {
@@ -131,5 +131,41 @@
     .dialog-buttons button {
         width: 40px;
         height: 40px;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .load-more {
+        margin: 30px 0 0 0;
+        padding: 12px 18px;
+        font-size: 9px;
+    }
+
+    .back-to-top.show {
+        margin: 30px 0 0 0;
+        padding: 12px 12px;
+        font-size: 9px;
+    }
+
+    .loading-screen {
+        position: absolute;
+        left: calc(100% + 15px);
+        top: 28px !important;
+        transform: none;
+
+        height: auto;
+    }
+
+    .pokeball-loader {
+        width: 35px;
+        height: 35px;
+        border-width: 3px;
+    }
+
+    .pokeball-button {
+        width: 11px;
+        height: 11px;
+        border-width: 2px;
     }
 }
