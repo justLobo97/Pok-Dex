@@ -85,5 +85,51 @@
         height: 151px;
     }
 
+    .pokemon-dialog {
+        width: 350px;
+        padding: 12px;
+        border-width: 7px;
+    }
 
+    .dialog-content {
+        padding: 12px;
+    }
+
+    .dialog-header {
+        font-size: 13px;
+    }
+
+    .dialog-image {
+        height: 190px;
+    }
+
+    .dialog-image img {
+        width: 180px;
+    }
+
+    .dialog-types {
+        gap: 8px;
+        padding: 8px 0;
+        margin-bottom: 10px;
+    }
+
+    .dialog-types span {
+        padding: 6px 10px;
+        font-size: 8px;
+    }
+
+    .pokemon-info {
+        gap: 6px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .dialog-buttons {
+        margin-top: 10px;
+    }
+
+    .dialog-buttons button {
+        width: 40px;
+        height: 40px;
+    }
 }

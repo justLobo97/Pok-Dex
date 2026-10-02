@@ -104,6 +104,15 @@
     font-size: 12px;
 }
 
+.pokemon-info > p {
+    display: flex;
+    align-items: center;
+}
+
+.pokemon-info > p > span {
+    width: 150px;
+}
+
 
 .dialog-buttons {
     display: flex;
@@ -131,6 +140,38 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+.pokemon-abilities {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding-top: 8px;
+    border-top: 2px dashed #8b7748;
+}
+
+.pokemon-abilities > p {
+    font-size: 10px;
+}
+
+.ability-list {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+.ability-list span {
+    padding: 6px 10px;
+
+    border: 2px solid black;
+    border-radius: 4px;
+
+    background-color: #f7edcf;
+
+    font-size: 9px;
+}
 .previous-button {
     padding-right: 8px;
 }
@@ -141,56 +182,4 @@
 
 .close-button {
     padding-left: 8px;
-}
-
-
-@media (max-width: 540px) {
-
-    .pokemon-dialog {
-        width: 350px;
-        padding: 12px;
-        border-width: 7px;
-    }
-
-    .dialog-content {
-        padding: 12px;
-    }
-
-    .dialog-header {
-        font-size: 13px;
-    }
-
-    .dialog-image {
-        height: 190px;
-    }
-
-    .dialog-image img {
-        width: 180px;
-    }
-
-    .dialog-types {
-        gap: 8px;
-        padding: 8px 0;
-        margin-bottom: 10px;
-    }
-
-    .dialog-types span {
-        padding: 6px 10px;
-        font-size: 8px;
-    }
-
-    .pokemon-info {
-        gap: 6px;
-        padding: 10px;
-        font-size: 10px;
-    }
-
-    .dialog-buttons {
-        margin-top: 10px;
-    }
-
-    .dialog-buttons button {
-        width: 40px;
-        height: 40px;
-    }
 }
