@@ -53,14 +53,14 @@ async function loadPokemon(results, newCard) {
 }
 
 function renderPokemon(data, name, newCard) {
-
+    let firstType = data.types[0].type.name.toLowerCase();
     let secondType = getSecondType(data);
 
     if (newCard) {
-        newCards += getPokemonTemplate(data, name, secondType);
+        newCards += getPokemonTemplate(data, name, firstType, secondType);
     }
     else {
-        document.getElementById('pokemon-card').innerHTML += getPokemonTemplate(data, name, secondType);
+        document.getElementById('pokemon-card').innerHTML += getPokemonTemplate(data, name, firstType, secondType);
     }
 }
 
@@ -131,6 +131,8 @@ function checkScroll() {
 
     if (window.scrollY === 0) {
         document.getElementById('back-to-top').classList.remove('show');
+        isSearching = false;
+        document.querySelector('.load-more').style.display = 'block';
         getPokemon(true);
     }
     else {

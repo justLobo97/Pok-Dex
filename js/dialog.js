@@ -9,7 +9,14 @@ async function openDialog(id, focusedButton) {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     let pokemon = await response.json();
 
-    dialog.innerHTML = getDialogTemplate(pokemon);
+    let previousButton = getPreviousButton();
+    let firstType = pokemon.types[0].type.name;
+    let secondType = getDialogSecondType(pokemon);
+    let firstAbility = pokemon.abilities[0].ability.name;
+    let secondAbility = getDialogSecondAbility(pokemon);
+    let pokemonId = pokemon.id.toString().padStart(5, "0");
+
+    dialog.innerHTML = getDialogTemplate(pokemon, pokemonId, firstType, secondType, firstAbility, secondAbility, previousButton);
 
     if (focusedButton) {
         document.querySelector(`.${focusedButton}-button`).focus();
@@ -38,6 +45,33 @@ async function getPokemonCount() {
     pokemonCount = pokemon.count;
 }
 
+function getDialogSecondType(pokemon) {
+    let secondType;
+
+    if (pokemon.types.length === 2) {
+        secondType = `<span class="${pokemon.types[1].type.name}">${pokemon.types[1].type.name.toUpperCase()}</span>`;
+    }
+    else {
+        secondType = "";
+    }
+
+    return secondType;
+}
+
+function getDialogSecondAbility(pokemon) {
+    let secondAbility;
+
+    if (pokemon.abilities.length === 2) {
+        secondAbility = `<span>${pokemon.abilities[1].ability.name.toUpperCase()}</span>`;
+    }
+
+    else {
+        secondAbility = "";
+    }
+
+    return secondAbility;
+}
+
 function nextDialogPokemon() {
     if (currentPokemonId < pokemonCount) {
         currentPokemonId += 1;
@@ -50,6 +84,14 @@ function previousDialogPokemon() {
         currentPokemonId -= 1;
         openDialog(currentPokemonId);
     }
+}
+
+function getPreviousButton() {
+    if (currentPokemonId > 1) {
+        return `<button class="previous-button" onclick="previousDialogPokemon()"><</button>`;
+    }
+
+    return "";
 }
 
 getPokemonCount();
