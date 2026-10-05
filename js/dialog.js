@@ -9,14 +9,7 @@ async function openDialog(id, focusedButton) {
     let response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
     let pokemon = await response.json();
 
-    let previousButton = getPreviousButton();
-    let firstType = pokemon.types[0].type.name;
-    let secondType = getDialogSecondType(pokemon);
-    let firstAbility = pokemon.abilities[0].ability.name;
-    let secondAbility = getDialogSecondAbility(pokemon);
-    let pokemonId = pokemon.id.toString().padStart(5, "0");
-
-    dialog.innerHTML = getDialogTemplate(pokemon, pokemonId, firstType, secondType, firstAbility, secondAbility, previousButton);
+    renderDialog(pokemon);
 
     if (focusedButton) {
         document.querySelector(`.${focusedButton}-button`).focus();
@@ -26,6 +19,17 @@ async function openDialog(id, focusedButton) {
         dialog.showModal();
         document.body.style.overflow = 'hidden';
     }
+}
+
+function renderDialog(pokemon) {
+    let previousButton = getPreviousButton();
+    let firstType = pokemon.types[0].type.name;
+    let secondType = getDialogSecondType(pokemon);
+    let firstAbility = pokemon.abilities[0].ability.name;
+    let secondAbility = getDialogSecondAbility(pokemon);
+    let pokemonId = pokemon.id.toString().padStart(5, "0");
+
+    dialog.innerHTML = getDialogTemplate(pokemon, pokemonId, firstType, secondType, firstAbility, secondAbility, previousButton);
 }
 
 dialog.addEventListener('click', function (event) {
